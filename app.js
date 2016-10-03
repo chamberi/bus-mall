@@ -14,30 +14,33 @@ function MakeImages(imgname, fname) {
 
 // call constructors
 function makeImgObj() {
-  new MakeImages('Bag', 'bag.jpg');
-  new MakeImages('Banana', 'banana.jpg');
-  new MakeImages('Bathroom', 'bathroom.jpg');
-  new MakeImages('Boots', 'boots.jpg');
-  new MakeImages('Breakfast', 'breakfast.jpg');
-  new MakeImages('Bubblegum', 'bubblegum.jpg');
-  new MakeImages('Chair', 'chair.jpg');
-  new MakeImages('Cthulhu', 'cthulhu.jpg');
-  new MakeImages('Dog Duck', 'dog-duck.jpg');
-  new MakeImages('Dragon', 'dragon.jpg');
-  new MakeImages('Pen', 'pen.jpg');
-  new MakeImages('Pet Sweep', 'pet-sweep.jpg');
-  new MakeImages('Scissors', 'scissors.jpg');
-  new MakeImages('Shark', 'shark.jpg');
-  new MakeImages('Sweep', 'sweep.png');
-  new MakeImages('Tauntaun', 'tauntaun.jpg');
-  new MakeImages('Unicorn', 'unicorn.jpg');
-  new MakeImages('USB', 'usb.gif');
-  new MakeImages('Water Can', 'water-can.jpg');
-  new MakeImages('Wine Glass', 'wine-glass.jpg');
+  new MakeImages('Bag', 'images/bag.jpg');
+  new MakeImages('Banana', 'images/banana.jpg');
+  new MakeImages('Bathroom', 'images/bathroom.jpg');
+  new MakeImages('Boots', 'images/boots.jpg');
+  new MakeImages('Breakfast', 'images/breakfast.jpg');
+  new MakeImages('Bubblegum', 'images/bubblegum.jpg');
+  new MakeImages('Chair', 'images/chair.jpg');
+  new MakeImages('Cthulhu', 'images/cthulhu.jpg');
+  new MakeImages('Dog Duck', 'images/dog-duck.jpg');
+  new MakeImages('Dragon', 'images/dragon.jpg');
+  new MakeImages('Pen', 'images/pen.jpg');
+  new MakeImages('Pet Sweep', 'images/pet-sweep.jpg');
+  new MakeImages('Scissors', 'images/scissors.jpg');
+  new MakeImages('Shark', 'images/shark.jpg');
+  new MakeImages('Sweep', 'images/sweep.png');
+  new MakeImages('Tauntaun', 'images/tauntaun.jpg');
+  new MakeImages('Unicorn', 'images/unicorn.jpg');
+  new MakeImages('USB', 'images/usb.gif');
+  new MakeImages('Water Can', 'images/water-can.jpg');
+  new MakeImages('Wine Glass', 'images/wine-glass.jpg');
 };
 makeImgObj();
 
-
+function randomImg() {
+  return Math.floor(Math.random() * 19);
+};
+randomImg();
 
 // Event listener for an image clicked
 // imgContain.addEventListener('click', handleImgClick);
