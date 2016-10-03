@@ -4,36 +4,40 @@ var allImages = [];
 var imgContain = document.getElementById('imgContain');
 
 // constructor function for making image objects
-function makeImages(imgname, fname) {
+function MakeImages(imgname, fname) {
   this.imgname = imgname;
-  this.fname = filename;
+  this.fname = fname;
   this.shown = 0;
   this.clicked = 0;
+  allImages.push(this);
 }
 
 // call constructors
 function makeImgObj() {
-  new makeImages = ('Bag', bag.jpg);
-  new makeImages = ('Banana', banana.jpg);
-  new makeImages = ('Bathroom', bathroom.jpg);
-  new makeImages = ('Boots', boots.jpg);
-  new makeImages = ('Breakfast', breakfast.jpg);
-  new makeImages = ('Bubblegum', bubblegum.jpg);
-  new makeImages = ('Chair', chair.jpg);
-  new makeImages = ('Cthulhu', cthulhu.jpg);
-  new makeImages = ('Dog Duck', dog-duck.jpg);
-  new makeImages = ('Dragon', dragon.jpg);
-  new makeImages = ('Pen', pen.jpg);
-  new makeImages = ('Pet Sweep', pet-sweep.jpg);
-  new makeImages = ('Scissors', scissors.jpg);
-  new makeImages = ('Shark', shark.jpg);
-  new makeImages = ('Sweep', sweep.png);
-  new makeImages = ('Tauntaun', tauntaun.jpg);
-  new makeImages = ('Unicorn', unicorn.jpg);
-  new makeImages = ('USB', usb.gif);
-  new makeImages = ('Water Can', water-can.jpg);
-  new makeImages = ('Wine Glass', wine-glass.jpg);
+  new MakeImages('Bag', 'bag.jpg');
+  new MakeImages('Banana', 'banana.jpg');
+  new MakeImages('Bathroom', 'bathroom.jpg');
+  new MakeImages('Boots', 'boots.jpg');
+  new MakeImages('Breakfast', 'breakfast.jpg');
+  new MakeImages('Bubblegum', 'bubblegum.jpg');
+  new MakeImages('Chair', 'chair.jpg');
+  new MakeImages('Cthulhu', 'cthulhu.jpg');
+  new MakeImages('Dog Duck', 'dog-duck.jpg');
+  new MakeImages('Dragon', 'dragon.jpg');
+  new MakeImages('Pen', 'pen.jpg');
+  new MakeImages('Pet Sweep', 'pet-sweep.jpg');
+  new MakeImages('Scissors', 'scissors.jpg');
+  new MakeImages('Shark', 'shark.jpg');
+  new MakeImages('Sweep', 'sweep.png');
+  new MakeImages('Tauntaun', 'tauntaun.jpg');
+  new MakeImages('Unicorn', 'unicorn.jpg');
+  new MakeImages('USB', 'usb.gif');
+  new MakeImages('Water Can', 'water-can.jpg');
+  new MakeImages('Wine Glass', 'wine-glass.jpg');
 };
+makeImgObj();
+
+
 
 // Event listener for an image clicked
-imgContain.addEventListener('click', handleImgClick);
+// imgContain.addEventListener('click', handleImgClick);
