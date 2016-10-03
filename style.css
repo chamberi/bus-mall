@@ -1,3 +1,12 @@
 * {
   border: orange 1px dotted;
 }
+
+#contain {
+  max-height: 300px;
+}
+
+img {
+  width: 300px;
+  display: inline-block;
+}

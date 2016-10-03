@@ -2,6 +2,7 @@
 
 var allImages = [];
 var imgContain = document.getElementById('imgContain');
+var randImg = [];
 
 // constructor function for making image objects
 function MakeImages(imgname, fname) {
@@ -37,10 +38,31 @@ function makeImgObj() {
 };
 makeImgObj();
 
-function randomImg() {
-  return Math.floor(Math.random() * 19);
-};
-randomImg();
+function pick3() {
+  for (var i = 0; i < 3; i++) {
+    randImg.push(Math.floor(Math.random() * 20));
+  }
+}
+pick3();
+console.log(randImg[0]);
+console.log(randImg[1]);
+console.log(randImg[2]);
 
+function makeImageShow() {
+  for (var j = 0; j < 3; j++) {
+    var imgsrcEl = document.createElement('img');
+    imgsrcEl.src = allImages[randImg[j]].fname;
+    imgContain.appendChild(imgsrcEl);
+  }
+}
+makeImageShow();
+
+
+// This function is the event handler for the submission of new store
+// function handleImgClick(event) {
+//
+// var newImgClicked = event.target.imgContain.value;
+//
+// }
 // Event listener for an image clicked
 // imgContain.addEventListener('click', handleImgClick);
