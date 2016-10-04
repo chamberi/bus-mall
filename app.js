@@ -2,7 +2,12 @@
 
 var allImages = [];
 var imgContain = document.getElementById('imgContain');
-var randImg = [];
+var left = document.getElementById('left');
+var center = document.getElementById('center');
+var right = document.getElementById('right');
+var leftImg;
+var centerImg;
+var rightImg;
 
 // constructor function for making image objects
 function MakeImages(imgname, fname) {
@@ -38,31 +43,44 @@ function makeImgObj() {
 };
 makeImgObj();
 
+
 function pick3() {
-  for (var i = 0; i < 3; i++) {
-    randImg.push(Math.floor(Math.random() * 20));
-  }
+  leftImg = Math.floor(Math.random() * 20);
+  centerImg = Math.floor(Math.random() * 20);
+  rightImg = Math.floor(Math.random() * 20);
+  console.log('left index is: ' + leftImg);
+  console.log('center index is: ' + centerImg);
+  console.log('right index is : ' + rightImg);
 }
 pick3();
-console.log(randImg[0]);
-console.log(randImg[1]);
-console.log(randImg[2]);
-
-function makeImageShow() {
-  for (var j = 0; j < 3; j++) {
-    var imgsrcEl = document.createElement('img');
-    imgsrcEl.src = allImages[randImg[j]].fname;
-    imgContain.appendChild(imgsrcEl);
-  }
-}
-makeImageShow();
-
-
-// This function is the event handler for the submission of new store
-// function handleImgClick(event) {
-//
-// var newImgClicked = event.target.imgContain.value;
-//
 // }
+
+if (leftImg === centerImg || leftImg === rightImg || centerImg === rightImg) {
+  pick3();
+} else {
+  left.src = allImages[leftImg].fname;
+  center.src = allImages[centerImg].fname;
+  right.src = allImages[rightImg].fname;
+}
+
+// This function is the event handler for an image click
+function handleImgClick(event) {
+  if (event.target.id === 'left') {
+    allImages[leftImg].clicked += 1;
+    console.log(allImages[leftImg].clicked);
+    pick3();
+  }
+  if (event.target.id === 'center') {
+    allImages[centerImg].clicked += 1;
+    console.log(allImages[centerImg].clicked);
+    pick3();
+  }
+  if (event.target.id === 'right') {
+    allImages[rightImg].clicked += 1;
+    console.log(allImages[rightImg].clicked);
+    pick3();
+  }
+};
+
 // Event listener for an image clicked
-// imgContain.addEventListener('click', handleImgClick);
+imgContain.addEventListener('click', handleImgClick);

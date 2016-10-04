@@ -4,9 +4,25 @@
 
 #contain {
   max-height: 300px;
+  margin: auto;
 }
 
 img {
   width: 300px;
   display: inline-block;
+}
+
+#left {
+  height: 300px;
+  margin: auto;
+}
+
+#center {
+  height: 300px;
+  margin: auto;
+}
+
+#right {
+  height: 300px;
+  margin: auto;
 }
