@@ -102,19 +102,19 @@ pick3();
 function handleImgClick(event) {
   if (event.target.id === 'left') {
     allImages[leftImg].clicked += 1;
-    console.log(allImages[leftImg].imgname + allImages[leftImg].clicked);
+    console.log(allImages[leftImg].imgname + ' ' + allImages[leftImg].clicked);
     counter += 1;
     pick3();
   }
   if (event.target.id === 'center') {
     allImages[centerImg].clicked += 1;
-    console.log(allImages[centerImg].imgname + allImages[centerImg].clicked);
+    console.log(allImages[centerImg].imgname + ' ' + allImages[centerImg].clicked);
     counter += 1;
     pick3();
   }
   if (event.target.id === 'right') {
     allImages[rightImg].clicked += 1;
-    console.log(allImages[rightImg].imgname + allImages[rightImg].clicked);
+    console.log(allImages[rightImg].imgname + ' ' + allImages[rightImg].clicked);
     counter += 1;
     pick3();
   }
@@ -176,13 +176,14 @@ function drawChart() {
     type: 'bar',
     data: data,
     options: {
-      responsive: false
-    },
-    scales: [{
-      ticks: {
-        beginAtZero:true
+      scales: {
+        yAxes: [{
+          ticks: {
+            stepSize: 1
+          }
+        }]
       }
-    }]
+    }
   });
   chartDrawn = true;
 }
