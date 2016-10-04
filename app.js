@@ -5,7 +5,6 @@ var imgContain = document.getElementById('imgContain');
 var left = document.getElementById('left');
 var center = document.getElementById('center');
 var right = document.getElementById('right');
-// var stats = document.getElementById('stats');
 var leftImg;
 var centerImg;
 var rightImg;
@@ -13,8 +12,6 @@ var oldLeft;
 var oldCenter;
 var oldRight;
 var counter = 0;
-var imgChart;
-var chartDrawn = false;
 var votes = [];
 var imgIds = [];
 
@@ -53,7 +50,7 @@ function makeImgObj() {
 };
 makeImgObj();
 
-
+// pick 3 numbers at a time function
 function pick3() {
   if (counter >= 25) {
     imgContain.removeEventListener('click', handleImgClick);
@@ -65,7 +62,7 @@ function pick3() {
     leftImg = Math.floor(Math.random() * 20);
     centerImg = Math.floor(Math.random() * 20);
     rightImg = Math.floor(Math.random() * 20);
-    // var imgArr = [leftImg, centerImg, rightImg];
+
     // console.log('left index is: ' + leftImg);
     // console.log('center index is: ' + centerImg);
     // console.log('right index is : ' + rightImg);
@@ -86,17 +83,6 @@ function pick3() {
   }
 }
 pick3();
-
-// Build stats to html page
-// function statsPackage() {
-//   for (var i = 0; i < 20; i++) {
-//     var liEl = document.createElement('li');
-//     var strikeHit = allImages[i].clicked / allImages[i].shown;
-//     liEl.textContent = allImages[i].imgname + ': ' + allImages[i].clicked + ' out of ' + allImages[i].shown + ' times. (' + strikeHit.toFixed(2) + '%).';
-//     stats.appendChild(liEl);
-//   }
-// }
-
 
 // This function is the event handler for an image click
 function handleImgClick(event) {
@@ -126,7 +112,6 @@ function handleImgClick(event) {
 };
 
 // Chart fucntion area
-
 function hideChart() {
   document.getElementById('research-chart').hidden = true;
 }
@@ -137,7 +122,6 @@ function updateChartArrays() {
     votes[i] = allImages[i].clicked;
   }
 }
-
 
 var data = {
   labels: imgIds,
@@ -172,7 +156,7 @@ var data = {
 
 function drawChart() {
   var ctx = document.getElementById('research-chart').getContext('2d');
-  imgChart = new Chart(ctx,{
+  new Chart(ctx,{
     type: 'bar',
     data: data,
     options: {
@@ -185,7 +169,6 @@ function drawChart() {
       }
     }
   });
-  chartDrawn = true;
 }
 
 // Event listener for an image clicked
