@@ -8,6 +8,9 @@ var right = document.getElementById('right');
 var leftImg;
 var centerImg;
 var rightImg;
+var oldLeft;
+var oldCenter;
+var oldRight;
 
 // constructor function for making image objects
 function MakeImages(imgname, fname) {
@@ -51,17 +54,20 @@ function pick3() {
   console.log('left index is: ' + leftImg);
   console.log('center index is: ' + centerImg);
   console.log('right index is : ' + rightImg);
+  if (leftImg === centerImg || leftImg === rightImg || centerImg === rightImg || leftImg === oldLeft || leftImg === oldCenter || leftImg === oldRight || centerImg === oldLeft || centerImg === oldCenter || centerImg === oldRight || rightImg === oldLeft || rightImg === oldCenter || rightImg === oldRight) {
+    pick3();
+  } else {
+    left.src = allImages[leftImg].fname;
+    center.src = allImages[centerImg].fname;
+    right.src = allImages[rightImg].fname;
+    oldLeft = leftImg;
+    oldCenter = centerImg;
+    oldRight = rightImg;
+  }
 }
 pick3();
 // }
 
-if (leftImg === centerImg || leftImg === rightImg || centerImg === rightImg) {
-  pick3();
-} else {
-  left.src = allImages[leftImg].fname;
-  center.src = allImages[centerImg].fname;
-  right.src = allImages[rightImg].fname;
-}
 
 // This function is the event handler for an image click
 function handleImgClick(event) {
@@ -78,6 +84,10 @@ function handleImgClick(event) {
   if (event.target.id === 'right') {
     allImages[rightImg].clicked += 1;
     console.log(allImages[rightImg].clicked);
+    pick3();
+  }
+  if (event.target.id === 'imgContain') {
+    alert('You need to click on an image!');
     pick3();
   }
 };

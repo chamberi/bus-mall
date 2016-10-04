@@ -4,6 +4,7 @@
 
 #contain {
   max-height: 300px;
+  display: inline-block;
   margin: auto;
 }
 
