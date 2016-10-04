@@ -1,6 +1,6 @@
-* {
+/** {
   border: orange 1px dotted;
-}
+}*/
 
 #contain {
   max-height: 300px;
@@ -26,4 +26,11 @@ img {
 #right {
   height: 300px;
   margin: auto;
+}
+
+ul {
+  font-size: 16px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
