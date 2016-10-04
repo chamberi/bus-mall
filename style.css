@@ -4,28 +4,33 @@
 
 #contain {
   max-height: 300px;
-  display: inline-block;
+  width: 900px;
+  display: block;
   margin: auto;
 }
 
 img {
   width: 300px;
-  display: inline-block;
 }
 
 #left {
   height: 300px;
+  width: 300px;
   margin: auto;
+  border: 2px solid black;
+  margin-left: 150px;
 }
 
 #center {
   height: 300px;
   margin: auto;
+  border: 2px solid black;
 }
 
 #right {
   height: 300px;
   margin: auto;
+  border: 2px solid black;
 }
 
 ul {

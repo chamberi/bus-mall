@@ -25,26 +25,26 @@ function MakeImages(imgname, fname) {
 
 // call constructors
 function makeImgObj() {
-  new MakeImages('Bag', 'images/bag.jpg');
-  new MakeImages('Banana', 'images/banana.jpg');
-  new MakeImages('Bathroom', 'images/bathroom.jpg');
-  new MakeImages('Boots', 'images/boots.jpg');
-  new MakeImages('Breakfast', 'images/breakfast.jpg');
-  new MakeImages('Bubblegum', 'images/bubblegum.jpg');
-  new MakeImages('Chair', 'images/chair.jpg');
+  new MakeImages('R2D2 Bag', 'images/bag.jpg');
+  new MakeImages('Banana Cutter', 'images/banana.jpg');
+  new MakeImages('iPad & Toilet Roll Holder', 'images/bathroom.jpg');
+  new MakeImages('Toeless Boots', 'images/boots.jpg');
+  new MakeImages('All-in-One Breakfast Maker', 'images/breakfast.jpg');
+  new MakeImages('Meatball Bubblegum', 'images/bubblegum.jpg');
+  new MakeImages('Convex Chair', 'images/chair.jpg');
   new MakeImages('Cthulhu', 'images/cthulhu.jpg');
-  new MakeImages('Dog Duck', 'images/dog-duck.jpg');
-  new MakeImages('Dragon', 'images/dragon.jpg');
-  new MakeImages('Pen', 'images/pen.jpg');
-  new MakeImages('Pet Sweep', 'images/pet-sweep.jpg');
-  new MakeImages('Scissors', 'images/scissors.jpg');
-  new MakeImages('Shark', 'images/shark.jpg');
-  new MakeImages('Sweep', 'images/sweep.png');
-  new MakeImages('Tauntaun', 'images/tauntaun.jpg');
-  new MakeImages('Unicorn', 'images/unicorn.jpg');
-  new MakeImages('USB', 'images/usb.gif');
-  new MakeImages('Water Can', 'images/water-can.jpg');
-  new MakeImages('Wine Glass', 'images/wine-glass.jpg');
+  new MakeImages('Duck Beack for Dogs', 'images/dog-duck.jpg');
+  new MakeImages('Dragon Meat', 'images/dragon.jpg');
+  new MakeImages('Cutlery Pens', 'images/pen.jpg');
+  new MakeImages('Pet Sweep Dust Boots', 'images/pet-sweep.jpg');
+  new MakeImages('Pizza Scissors', 'images/scissors.jpg');
+  new MakeImages('Shark Sleeping Bag', 'images/shark.jpg');
+  new MakeImages('Baby Sweeper', 'images/sweep.png');
+  new MakeImages('Tauntaun Sleeping Bag', 'images/tauntaun.jpg');
+  new MakeImages('Unicorn Meat', 'images/unicorn.jpg');
+  new MakeImages('Tenticle USB', 'images/usb.gif');
+  new MakeImages('Recursive Water Can', 'images/water-can.jpg');
+  new MakeImages('Wine Glass for Rainy Days', 'images/wine-glass.jpg');
 };
 makeImgObj();
 
@@ -71,6 +71,9 @@ function pick3() {
     oldLeft = leftImg;
     oldCenter = centerImg;
     oldRight = rightImg;
+    allImages[leftImg].shown += 1;
+    allImages[centerImg].shown += 1;
+    allImages[rightImg].shown += 1;
   }
 }
 pick3();
@@ -78,7 +81,7 @@ pick3();
 function statsPackage() {
   for (var i = 0; i < 20; i++) {
     var liEl = document.createElement('li');
-    liEl.textContent = allImages[i].imgname + ': ' + allImages[i].clicked;
+    liEl.textContent = allImages[i].imgname + ': ' + allImages[i].clicked + ' out of ' + allImages[i].shown + ' times.';
     stats.appendChild(liEl);
   }
 }
