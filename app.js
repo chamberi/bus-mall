@@ -33,7 +33,7 @@ function makeImgObj() {
   new MakeImages('Meatball Bubblegum', 'images/bubblegum.jpg');
   new MakeImages('Convex Chair', 'images/chair.jpg');
   new MakeImages('Cthulhu', 'images/cthulhu.jpg');
-  new MakeImages('Duck Beack for Dogs', 'images/dog-duck.jpg');
+  new MakeImages('Duck Beak for Dogs', 'images/dog-duck.jpg');
   new MakeImages('Dragon Meat', 'images/dragon.jpg');
   new MakeImages('Cutlery Pens', 'images/pen.jpg');
   new MakeImages('Pet Sweep Dust Boots', 'images/pet-sweep.jpg');
@@ -43,7 +43,7 @@ function makeImgObj() {
   new MakeImages('Tauntaun Sleeping Bag', 'images/tauntaun.jpg');
   new MakeImages('Unicorn Meat', 'images/unicorn.jpg');
   new MakeImages('Tenticle USB', 'images/usb.gif');
-  new MakeImages('Recursive Water Can', 'images/water-can.jpg');
+  new MakeImages('Maladjusted Water Can', 'images/water-can.jpg');
   new MakeImages('Wine Glass for Rainy Days', 'images/wine-glass.jpg');
 };
 makeImgObj();
@@ -81,7 +81,8 @@ pick3();
 function statsPackage() {
   for (var i = 0; i < 20; i++) {
     var liEl = document.createElement('li');
-    liEl.textContent = allImages[i].imgname + ': ' + allImages[i].clicked + ' out of ' + allImages[i].shown + ' times.';
+    var strikeHit = allImages[i].clicked / allImages[i].shown;
+    liEl.textContent = allImages[i].imgname + ': ' + allImages[i].clicked + ' out of ' + allImages[i].shown + ' times. (' + strikeHit.toFixed(2) + '%).';
     stats.appendChild(liEl);
   }
 }
