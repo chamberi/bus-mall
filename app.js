@@ -106,7 +106,6 @@ function handleImgClick(event) {
   }
   if (event.target.id === 'imgContain') {
     alert('You need to click on an image!');
-    counter += 1;
     pick3();
   }
 };
