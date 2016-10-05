@@ -127,7 +127,7 @@ var data = {
   labels: imgIds,
   datasets: [
     {
-      label: 'Votes',
+      label: 'Your Choices',
       data: votes,
       backgroundColor: [
         'rgb(0,0,0)',
@@ -160,10 +160,12 @@ function drawChart() {
     type: 'bar',
     data: data,
     options: {
+      responsive: false,
       scales: {
         yAxes: [{
           ticks: {
-            stepSize: 1
+            stepSize: 1,
+            beginAtZero:true
           }
         }]
       }
