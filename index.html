@@ -3,14 +3,15 @@
 
 <head>
   <title>Bus Mall Research Page</title>
-  <link href="style.css" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel=“stylesheet” href=“reset.css”>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 </head>
 
 <body>
   <header>
     <h2>Which Product Would You Buy Today?</h2>
-    <p>Thank you for participating in our market research project. You will be shows 3 products at a time. Please click on the product you like the most. After 25 rounds, we will show you your results.</p><br>
+    <p>Thank you for participating in our market research project. You will be shown 3 products at a time. Please click on the product you like the most. After 25 rounds, we will show you your results.</p><br>
   </header>
   <section id="imgContain">
     <img id="left" src="">
@@ -19,8 +20,7 @@
   </section>
   <section>
     <br>
-    <ul id="stats">
-    </ul>
+    <canvas id="research-chart" width="900px" height="400px"></canvas>
   </section>
   <script src="app.js"></script>
 </body>
