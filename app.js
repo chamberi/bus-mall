@@ -2,6 +2,7 @@
 var allImages = [];
 
 if (localStorage.getItem('storeData')){
+  allImages = [];
   allImages = JSON.parse(localStorage.getItem('storeData'));
 } else {
   makeImgObj();
@@ -55,7 +56,6 @@ function makeImgObj() {
   new MakeImages('Water Can', 'images/water-can.jpg');
   new MakeImages('Wine Glass', 'images/wine-glass.jpg');
 };
-makeImgObj();
 
 // pick 3 numbers at a time function
 function pick3() {
@@ -166,15 +166,18 @@ function drawChart() {
   var ctx = document.getElementById('research-chart').getContext('2d');
   new Chart(ctx,{
     type: 'bar',
+    width: 300,
     data: data,
     options: {
       responsive: false,
       scales: {
         yAxes: [{
-          ticks: {
-            stepSize: 1,
-            beginAtZero:true
-          }
+          xAxes: [{
+            ticks: {
+              stepSize: 1,
+              beginAtZero:true
+            }
+          }]
         }]
       }
     }

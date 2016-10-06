@@ -1,0 +1,12 @@
+function Dog (name, breed) {
+	this.name = name;
+	this.breed = breed;
+}
+
+Dog.prototype.say =  function () {
+console.log('bark');
+};
+
+var joe = new Dog('Joe', 'Lab');
+
+console.log(joe.say());
