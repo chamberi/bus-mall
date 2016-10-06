@@ -1,6 +1,13 @@
 'use strict';
-
 var allImages = [];
+
+if (localStorage.getItem('storeData')){
+  allImages = JSON.parse(localStorage.getItem('storeData'));
+} else {
+  makeImgObj();
+};
+
+
 var imgContain = document.getElementById('imgContain');
 var left = document.getElementById('left');
 var center = document.getElementById('center');
@@ -56,6 +63,8 @@ function pick3() {
     imgContain.removeEventListener('click', handleImgClick);
     updateChartArrays();
     drawChart();
+    var allImagesString = JSON.stringify(allImages);
+    localStorage.setItem('storeData', allImagesString);
     return;
   } else {
     hideChart();
